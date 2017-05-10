@@ -1,5 +1,30 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.row
+    div.col-lg-3.col-md-2
+    div.col-lg-3.col-md-4.col-sm-6.col-xs-6
+      table
+        thead Contatcts
+        tbody#loadData
+    div.col-lg-3.col-md-4.col-sm-6.col-xs-6
+      form.form-horizontal
+        div.form-group
+          label(for='name') Name
+          input#name.form-control(type='text', placeholder='Enter the Name', required)
+        div.form-group
+          label(for='mobileNumber') Mobile Number
+          input#mobileNumber.form-control(type='number', placeholder='Enter the Mobile Number', required)
+        div.form-group
+          label(for='email') E-Mail
+          input#email.form-control(type='email', placeholder='Enter the Email')
+    div.col-lg-3.col-md-2
+
+  div.row
+    div.col-lg-3
+    button#add.btn.btn-info.col-lg-1 Add
+    div.col-lg-1
+    button#update.btn.btn-primary.col-lg-1 Update
+    div.col-lg-1
+    button#delete.btn.btn-danger.col-lg-1 Delete
+    div.col-lg-3
