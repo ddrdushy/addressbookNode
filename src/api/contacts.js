@@ -31,7 +31,7 @@ contacts.add = (data) =>{
         });
 };
 
-contacts.update = (id) =>{
+contacts.delete = (id) =>{
     return knex()
         .where('id','=',id)
         .del();

@@ -11,14 +11,29 @@ router.get('/all', function(req, res, next) {
 });
 
 router.post('/add', function(req, res, next) {
-  res.send('respond with a resource');
+  data.add(req.body)
+      .then((data,err)=>{
+        if(err)
+            res.send('error');
+        res.send('ok');
+      });
 });
 
 router.post('/edit', function(req, res, next) {
-    res.send('respond with a resource');
+    data.update(req.body)
+        .then((data,err)=>{
+            if(err)
+                res.send('error');
+            res.send('ok');
+        });
 });
 
 router.post('/delete', function(req, res, next) {
-    res.send('respond with a resource');
+    data.delete(req.body.id)
+        .thne((data,err)=>{
+            if(err)
+                res.send('error');
+            res.send('ok');
+        });
 });
 module.exports = router;
