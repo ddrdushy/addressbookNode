@@ -2,9 +2,8 @@ const knex = require('../utils/knex');
 var contacts = {};
 
 contacts.all = () => {
-    return knex()
+    return knex('data')
         .select()
-        .from('data')
         .then((data,err)=>{
             if(err)
                 return;
@@ -13,26 +12,26 @@ contacts.all = () => {
 };
 
 contacts.update = (data) =>{
-    return knex()
+    return knex('data')
         .where('id','=',data.id)
         .update({
-            name: data.name,
-            mobile: data.mobile,
-            email: data.email
+            name: `${data.name}`,
+            mobile: `${data.mobile}`,
+            email: `${data.email}`
         });
 };
 
 contacts.add = (data) =>{
-    return knex()
+    return knex('data')
         .insert({
-            name: data.name,
-            mobile: data.mobile,
-            email: data.email
+            name: `${data.name}`,
+            mobile: `${data.mobile}`,
+            email: `${data.email}`
         });
 };
 
 contacts.delete = (id) =>{
-    return knex()
+    return knex('data')
         .where('id','=',id)
         .del();
 };
