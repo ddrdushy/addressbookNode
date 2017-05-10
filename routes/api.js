@@ -30,7 +30,7 @@ router.post('/edit', function(req, res, next) {
 
 router.post('/delete', function(req, res, next) {
     data.delete(req.body.id)
-        .thne((data,err)=>{
+        .then((data,err)=>{
             if(err)
                 res.send('error');
             res.send('ok');
