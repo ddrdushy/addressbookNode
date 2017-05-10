@@ -12,4 +12,32 @@ contacts.all = () => {
         });
 };
 
+contacts.update = (data) =>{
+    return knex()
+        .where('id','=',data.id)
+        .update({
+            name: data.name,
+            mobile: data.mobile,
+            email: data.email
+        });
+};
+
+contacts.add = (data) =>{
+    return knex()
+        .insert({
+            name: data.name,
+            mobile: data.mobile,
+            email: data.email
+        });
+};
+
+contacts.update = (id) =>{
+    return knex()
+        .where('id','=',id)
+        .del();
+};
+
 module.exports = contacts;
+
+//TODO: delete function
+// TODO: add function
