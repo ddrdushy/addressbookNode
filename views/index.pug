@@ -3,21 +3,28 @@ extends layout
 block content
   div.row
     div.col-lg-3.col-md-2
-    div.col-lg-3.col-md-4.col-sm-6.col-xs-6
-      table
-        thead Contatcts
+    div.col-lg-2.col-md-2.col-sm-4.col-xs-4
+      table.table.table-bordered
+        thead
+          th Contatcts
         tbody#loadData
-    div.col-lg-3.col-md-4.col-sm-6.col-xs-6
-      form.form-horizontal
-        div.form-group
-          label(for='name') Name
-          input#name.form-control(type='text', placeholder='Enter the Name', required)
-        div.form-group
-          label(for='mobileNumber') Mobile Number
-          input#mobileNumber.form-control(type='number', placeholder='Enter the Mobile Number', required)
-        div.form-group
-          label(for='email') E-Mail
-          input#email.form-control(type='email', placeholder='Enter the Email')
+    div.col-lg-4.col-md-6.col-sm-8.col-xs-8
+      table.table.table-responsive
+        tr
+          td
+            label Name:
+          td
+            label#named
+        tr
+          td
+            label Mobile Number
+          td
+            label#mobileNumberd
+        tr
+          td
+            label E-Mail
+          td
+            label#emaild
     div.col-lg-3.col-md-2
 
   div.row
@@ -28,3 +35,32 @@ block content
     div.col-lg-1
     button#delete.btn.btn-danger.col-lg-1 Delete
     div.col-lg-3
+
+
+  // Modal
+  #myModalHorizontal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+    .modal-dialog
+      .modal-content
+        // Modal Body
+        .modal-body
+          form.form-horizontal(role='form')
+            .form-group
+              label.col-sm-2.control-label(for='name') Name
+              .col-sm-10
+                input#name.form-control(type='name', placeholder='Name',required)
+            .form-group
+              label.col-sm-2.control-label(for='mobileNumber') Mobile Number
+              .col-sm-10
+                input#mobileNumber.form-control(type='text', placeholder='mobile Number',required)
+            .form-group
+              label.col-sm-2.control-label(for='email') E-mail
+              .col-sm-10
+                input#email.form-control(type='text', placeholder='email')
+            .form-group
+              .col-sm-6
+                button.btn.btn-default(onclick="sendData()") Add Contact
+                button.btn.btn-default(type='button', data-dismiss='modal')
+                  | Close
+
+
+  script(src='/javascripts/client.js')

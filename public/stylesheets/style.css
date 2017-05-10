@@ -6,7 +6,9 @@ body {
 a {
   color: #00B7FF;
 }
-
+.highlight{
+  background-color: #fff722;
+}
 .modal-body .form-horizontal .col-sm-2,
 .modal-body .form-horizontal .col-sm-10 {
   width: 100%
